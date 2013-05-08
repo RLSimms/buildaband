@@ -1,0 +1,33 @@
+<h1>Songs</h1>
+
+<p class="btn"><%= link_to 'Add a New Song', new_song_url %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Band</th>
+      <th>Album</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.name %></td>
+      <td><%= song.band.name %></td>
+      <td><%= song.album.name %></td>
+
+      <td><%= link_to 'Show', song_url(song) %></td>
+      <td><%= link_to 'Edit', edit_song_url(song) %></td>
+      <td><%= link_to 'Destroy', song_url(song), method: 'delete', data: { confirm: "Do you really want to delete this song?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

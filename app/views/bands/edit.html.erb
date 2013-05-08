@@ -1,0 +1,26 @@
+<h1>Editing Band #<%= @band.id %></h1>
+
+
+<%= form_tag(band_url(@band), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @band.name %>
+  </div>
+
+  <div>
+    <%= label_tag :hometown %><br />
+    <%= text_field_tag :hometown, @band.hometown %>
+  </div>
+
+  <div>
+    <%= label_tag :image %><br />
+    <%= text_field_tag :image, @band.image %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update Band" %>
+  </div>
+
+<% end %>

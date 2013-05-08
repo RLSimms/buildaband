@@ -1,0 +1,26 @@
+<h1>Editing Song #<%= @song.id %></h1>
+
+
+<%= form_tag(song_url(@song), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @song.name %>
+  </div>
+
+  <div>
+    <%= label_tag :band_id %><br />
+    <%= select_tag(:band_id, options_from_collection_for_select(Band.all, :id, :name)) %>
+  </div>
+
+  <div>
+    <%= label_tag :album_id %><br />
+    <%= select_tag(:album_id, options_from_collection_for_select(Album.all, :id, :name)) %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update Song" %>
+  </div>
+
+<% end %>

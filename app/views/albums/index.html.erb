@@ -1,0 +1,32 @@
+<h1>Albums</h1>
+
+<p class="btn"><%= link_to 'Add a New Album', new_album_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Band</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @albums.each do |album| %>
+    <tr>
+      <td><%= album.name %></td>
+      <td><%= album.band.name %></td>
+      <td><%= image_tag album.image, :width => 200, class:"img-rounded" %></td>
+
+      <td><%= link_to 'Show', album_url(album) %></td>
+      <td><%= link_to 'Edit', edit_album_url(album) %></td>
+      <td><%= link_to 'Destroy', album_url(album), method: 'delete', data: { confirm: "Do you really want to delete this album?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

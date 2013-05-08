@@ -1,0 +1,32 @@
+<h1>Musicians</h1>
+
+<p class="btn"><%= link_to 'Add a New Musician', new_musician_url %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Instrument</th>
+
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @musicians.each do |musician| %>
+    <tr>
+      <td><%= musician.name %></td>
+      <td><%= musician.instrument %></td>
+
+
+
+      <td><%= link_to 'Show', musician_url(musician) %></td>
+      <td><%= link_to 'Edit', edit_musician_url(musician) %></td>
+      <td><%= link_to 'Destroy', musician_url(musician), method: 'delete', data: { confirm: "Do you really want to delete this musician?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

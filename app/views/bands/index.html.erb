@@ -1,0 +1,31 @@
+<h1>Bands</h1>
+
+<p class="btn"><%= link_to 'Add a New Band', new_band_url %></p>
+
+
+<table class="table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @bands.each do |band| %>
+    <tr>
+      <td><%= band.name %></td>
+      <td><%= image_tag band.image, :width => 200, class:"img-rounded" %></td>
+
+      <td><%= link_to 'Show', band_url(band) %></td>
+      <td><%= link_to 'Edit', edit_band_url(band) %></td>
+      <td><%= link_to 'Destroy', band_url(band), method: 'delete', data: { confirm: "Do you really want to delete this band?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

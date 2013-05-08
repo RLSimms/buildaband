@@ -1,0 +1,44 @@
+<h1>Band #<%= @band.id %></h1>
+
+<p class="a">
+  <b>Name:</b>
+  <%= @band.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @band.image, :width => 200, class:"img-circle" %>
+</p>
+
+<p>
+  <b>Hometown:</b>
+  <%= @band.hometown %>
+</p>
+
+<p>
+  <b>List of Albums:</b>
+   <ul>
+    <% @band.albums.each do |album| %>
+      <li><%= album.name %></li>
+    <% end %>
+   </ul>
+</p>
+
+<p>
+  <b>List of Songs:</b>
+   <ul>
+    <% @band.songs.each do |song| %>
+      <li><%= song.name %></li>
+    <% end %>
+   </ul>
+</p>
+
+<p>
+  <b>Members:</b>
+   <ul>
+    <% @band.members.each do |member| %>
+      <li><%= member.musician.name %></li>
+    <% end %>
+   </ul>
+</p>
+

@@ -1,0 +1,27 @@
+<h1>Album #<%= @album.id %></h1>
+
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+
+<p>
+  <b>Band:</b>
+  <%= @album.band.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @album.image, :width => 200 %>
+</p>
+
+<p>
+  <b>List of Songs:</b>
+   <ul>
+    <% @album.songs.each do |song| %>
+      <li><%= song.name %></li>
+    <% end %>
+   </ul>
+</p>
+
+

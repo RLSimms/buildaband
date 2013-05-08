@@ -1,0 +1,23 @@
+<h1>Editing User #<%= @user.id %></h1>
+
+<p><%= notice %></p>
+
+<%= form_tag(user_url(@user), method: 'put') do %>
+
+  <div>
+    <%= label_tag :username %><br />
+    <%= text_field_tag :username, @user.username %>
+  </div>
+
+  <div>
+    <p>Favorite</p>
+    <%= label_tag :band_id %><br />
+    <%= select_tag(:band_id, options_from_collection_for_select(Band.all, :id, :name)) %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update User" %>
+  </div>
+
+<% end %>

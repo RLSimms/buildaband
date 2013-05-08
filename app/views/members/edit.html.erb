@@ -1,0 +1,21 @@
+<h1>Editing Member #<%= @member.id %></h1>
+
+
+<%= form_tag(member_url(@member), method: 'put') do %>
+
+  <div>
+    <%= label_tag :band_id %><br />
+    <%= number_field_tag :band_id, @member.band_id %>
+  </div>
+
+  <div>
+    <%= label_tag :musician_id %><br />
+    <%= number_field_tag :musician_id, @member.musician_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Member" %>
+  </div>
+
+<% end %>

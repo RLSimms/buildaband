@@ -1,0 +1,21 @@
+<h1>New Musician</h1>
+
+
+<%= form_tag(musicians_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+    <div>
+    <%= label_tag :instrument %><br />
+    <%= text_field_tag :instrument %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Create Musician" %>
+  </div>
+<% end %>

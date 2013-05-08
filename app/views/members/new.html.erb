@@ -1,0 +1,22 @@
+<h1>New Member</h1>
+
+
+<%= form_tag(members_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :band_id %><br />
+    <%= select_tag(:band_id, options_from_collection_for_select(Band.all, :id, :name)) %>
+  </div>
+
+  <div>
+    <%= label_tag :musician_id %><br />
+    <%= select_tag(:musician_id, options_from_collection_for_select(Musician.all, :id, :name)) %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Member" %>
+  </div>
+
+<% end %>

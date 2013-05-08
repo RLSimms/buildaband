@@ -1,0 +1,21 @@
+<h1>Editing Musician #<%= @musician.id %></h1>
+
+
+<%= form_tag(musician_url(@musician), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @musician.name %>
+  </div>
+
+  <div>
+    <%= label_tag :instrument %><br />
+    <%= text_field_tag :instrument, @musician.instrument %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Musician" %>
+  </div>
+
+<% end %>

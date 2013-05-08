@@ -1,0 +1,26 @@
+<h1>Editing Album #<%= @album.id %></h1>
+
+
+<%= form_tag(album_url(@album), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @album.name %>
+  </div>
+
+  <div>
+    <%= label_tag :band_id %><br />
+    <%= select_tag(:band_id, options_from_collection_for_select(Band.all, :id, :name)) %>
+  </div>
+
+  <div>
+    <%= label_tag :image %><br />
+    <%= text_field_tag :image, @album.image %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update Album" %>
+  </div>
+
+<% end %>
